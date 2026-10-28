@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Veritas Education — Kanpur's Premier IIT-JEE, NEET & Foundation Hub</title>
+<meta name="description" content="Veritas Education, Kanpur — Premier IIT-JEE, NEET & Class 10-12 Foundation coaching. Experience Physics like never before with Ashish Sir. 4.8★ rated, 1-on-1 mentorship, practical lab approach." />
+<meta name="theme-color" content="#07090E" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          obsidian: '#07090E',
+          midnight: '#0F172A',
+          electric: '#3B82F6',
+          neon: '#8B5CF6',
+          aqua: '#06B6D4'
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          display: ['"Space Grotesk"', 'Inter', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #07090E; overflow-x: hidden; }
+
+  section { scroll-margin-top: 110px; }
+
+  /* ---------- Scrollbar ---------- */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #07090E; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3B82F6, #8B5CF6);
+    border-radius: 999px;
+    border: 2px solid #07090E;
+  }
+
+  /* ---------- Reusable Glass ---------- */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+  .glass-strong {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+
+  /* ---------- Gradient Text ---------- */
+  .text-gradient {
+    background: linear-gradient(100deg, #3B82F6 0%, #8B5CF6 45%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-soft {
+    background: linear-gradient(100deg, #93C5FD 0%, #C4B5FD 60%, #67E8F9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ---------- Glow Button ---------- */
+  .btn-glow {
+    position: relative;
+    box-shadow: 0 8px 30px -10px rgba(59, 130, 246, 0.65);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, filter .35s ease;
+  }
+  .btn-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(59, 130, 246, 0.55), 0 0 70px rgba(139, 92, 246, 0.35);
+    filter: brightness(1.06);
+  }
+  .btn-glow:active { transform: translateY(-1px) scale(.99); }
+
+  /* ---------- Card Lift ---------- */
+  .lift {
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .4s ease, background .4s ease;
+  }
+  .lift:hover {
+    transform: translateY(-7px);
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: 0 24px 60px -28px rgba(59, 130, 246, 0.75), 0 0 40px -20px rgba(139, 92, 246, 0.5);
+  }
+
+  /* ---------- Animations ---------- */
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-26px) rotate(6deg); }
+  }
+  @keyframes floatyAlt {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(22px) rotate(-7deg); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: .35; transform: scale(1); }
+    50% { opacity: .65; transform: scale(1.12); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes pingSlow {
+    0% { transform: scale(1); opacity: .7; }
+    80%, 100% { transform: scale(2.1); opacity: 0; }
+  }
+
+  .float-slow { animation: floaty 9s ease-in-out infinite; }
+  .float-slow-alt { animation: floatyAlt 11s ease-in-out infinite; }
+  .orb-pulse { animation: pulseGlow 8s ease-in-out infinite; }
+
+  .shimmer-line {
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,.65), rgba(6,182,212,.65), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 4.5s linear infinite;
+  }
+
+  .ping-slow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgba(59, 130, 246, 0.55);
+    animation: pingSlow 2.6s cubic-bezier(0,0,.2,1) infinite;
+    z-index: -1;
+  }
+
+  /* ---------- Reveal on Scroll ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1);
+    will-change: opacity, transform;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Nav link underline ---------- */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    height: 2px; width: 0%;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #06B6D4);
+    border-radius: 999px;
+    transition: width .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link:hover, .nav-link.active { color: #fff; }
+
+  /* ---------- Filter tabs ---------- */
+  .tab-btn {
+    transition: all .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .tab-btn.active {
+    background: linear-gradient(100deg, #3B82F6, #8B5CF6);
+    color: #fff;
+    box-shadow: 0 10px 30px -12px rgba(99, 102, 241, 0.9);
+    border-color: transparent;
+  }
+
+  /* ---------- Course card filtering ---------- */
+  .course-card { transition: opacity .4s ease, transform .4s ease; }
+  .course-card.hide {
+    display: none;
+  }
+
+  /* ---------- Form focus ring ---------- */
+  .field {
+    transition: border-color .3s, box-shadow .3s, background .3s;
+  }
+  .field:focus {
+    outline: none;
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  /* ---------- Grid pattern ---------- */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 78%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body class="bg-obsidian text-slate-300 font-sans antialiased selection:bg-electric/40 selection:text-white">
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
+    <nav id="navShell" class="mt-3 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-4 sm:px-6 py-3 transition-all duration-500">
+
+      <!-- Brand -->
+      <a href="#home" class="group flex items-center gap-3 shrink-0">
+        <div class="relative grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-electric via-neon to-aqua shadow-[0_0_22px_-4px_rgba(59,130,246,0.9)]">
+          <span class="font-display text-lg font-bold text-white leading-none">V</span>
+          <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/25"></span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-lg sm:text-xl font-bold tracking-[0.18em] text-white">VERITAS</div>
+          <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-electric/90 font-medium">The Physics &amp; Competitive Hub</div>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="#home" class="nav-link transition-colors">Home</a>
+        <a href="#programs" class="nav-link transition-colors">Programs</a>
+        <a href="#edge" class="nav-link transition-colors">The Ashish Sir Edge</a>
+        <a href="#faculty" class="nav-link transition-colors">Faculty</a>
+        <a href="#reviews" class="nav-link transition-colors">Reviews</a>
+        <a href="#contact" class="nav-link transition-colors">Contact</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-2">
+        <a href="#contact" id="navCta"
+           class="btn-glow hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-electric to-neon px-5 py-2.5 text-sm font-semibold text-white">
+          <i data-lucide="calendar-check" class="h-4 w-4"></i>
+          Book Demo Class
+        </a>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false"
+                class="lg:hidden grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10">
+          <i data-lucide="menu" class="h-5 w-5" id="menuIcon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-out">
+      <div class="mt-2 rounded-2xl border border-white/10 bg-midnight/90 backdrop-blur-xl p-3 shadow-2xl">
+        <a href="#home" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition">
+          <i data-lucide="home" class="h-4 w-4 text-electric"></i> Home
+        </a>
+        <a href="#programs" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition">
+          <i data-lucide="book-open" class="h-4 w-4 text-electric"></i> Programs
+        </a>
+        <a href="#edge" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition">
+          <i data-lucide="sparkles" class="h-4 w-4 text-electric"></i> The Ashish Sir Edge
+        </a>
+        <a href="#faculty" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition">
+          <i data-lucide="users" class="h-4 w-4 text-electric"></i> Faculty
+        </a>
+        <a href="#reviews" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition">
+          <i data-lucide="star" class="h-4 w-4 text-electric"></i> Reviews
+        </a>
+        <a href="#contact" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition">
+          <i data-lucide="phone" class="h-4 w-4 text-electric"></i> Contact
+        </a>
+        <a href="#contact" class="mobile-link mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-electric to-neon px-4 py-3 text-sm font-semibold text-white">
+          <i data-lucide="calendar-check" class="h-4 w-4"></i> Book Demo Class
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home" class="relative flex min-h-screen items-center overflow-hidden pt-36 pb-24">
+
+  <!-- Particle canvas -->
+  <canvas id="particles" class="pointer-events-none absolute inset-0 h-full w-full"></canvas>
+
+  <!-- Grid pattern -->
+  <div class="pointer-events-none absolute inset-0 grid-pattern"></div>
+
+  <!-- Ambient orbs -->
+  <div class="orb-pulse pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-electric/25 blur-[130px]"></div>
+  <div class="orb-pulse pointer-events-none absolute top-1/3 -left-32 h-[420px] w-[420px] rounded-full bg-neon/20 blur-[120px]" style="animation-delay:-3s"></div>
+  <div class="orb-pulse pointer-events-none absolute bottom-0 right-0 h-[460px] w-[460px] rounded-full bg-aqua/15 blur-[130px]" style="animation-delay:-5s"></div>
+
+  <!-- Floating physics formulas -->
+  <div class="pointer-events-none absolute inset-0 hidden xl:block font-display select-none">
+    <span class="absolute left-[6%] top-[22%] text-2xl text-electric/25 float-slow">E = mc²</span>
+    <span class="absolute right-[8%] top-[16%] text-xl text-neon/30 float-slow-alt">F = ma</span>
+    <span class="absolute left-[11%] bottom-[24%] text-lg text-aqua/25 float-slow-alt">v² = u² + 2as</span>
+    <span class="absolute right-[13%] bottom-[30%] text-2xl text-electric/20 float-slow">λ = h / p</span>
+    <span class="absolute left-[46%] top-[9%] text-base text-neon/25 float-slow-alt">∇ × B = μ₀J</span>
+    <span class="absolute right-[26%] bottom-[9%] text-base text-aqua/25 float-slow">∮ E · dA = Q/ε₀</span>
+    <span class="absolute left-[3%] top-[58%] text-base text-neon/20 float-slow">ħ = h/2π</span>
+    <span class="absolute right-[4%] top-[52%] text-sm text-electric/25 float-slow-alt">τ = Iα</span>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+
+      <!-- Badge -->
+      <div class="reveal mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] sm:text-xs font-medium text-slate-300 backdrop-blur-md">
+        <span class="text-amber-400">⭐</span>
+        <span class="text-white font-semibold">4.8/5 Rated</span>
+        <span class="h-3 w-px bg-white/15"></span>
+        <span class="text-slate-400">Kanpur's Most Trusted JEE &amp; NEET Institute</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="reveal mt-7 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-[4.2rem]" style="transition-delay:80ms">
+        Where Concepts Turn Into
+        <span class="text-gradient"> Ranks.</span>
+        <span class="mt-2 block text-2xl font-semibold tracking-tight text-slate-200 sm:text-3xl lg:text-4xl">
+          Experience Physics Like <span class="text-gradient-soft">Never Before.</span>
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="reveal mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base lg:text-lg" style="transition-delay:160ms">
+        Specialized coaching for <span class="text-slate-200 font-medium">IIT-JEE</span>,
+        <span class="text-slate-200 font-medium">NEET</span>, and Class 10th–12th Board Foundation.
+        Practical visualization, 1-on-1 mentorship, and a result-driven test series.
+      </p>
+
+      <!-- CTAs -->
+      <div class="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4" style="transition-delay:240ms">
+        <a href="#programs"
+           class="btn-glow group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-electric via-blue-500 to-neon px-7 py-3.5 text-sm font-semibold text-white sm:w-auto sm:text-base">
+          Explore Courses
+          <i data-lucide="arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+        </a>
+
+        <a href="https://wa.me/918948411505" target="_blank" rel="noopener"
+           class="group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-7 py-3.5 text-sm font-semibold text-emerald-300 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/60 hover:bg-emerald-500/20 hover:shadow-[0_0_35px_-10px_rgba(16,185,129,0.8)] sm:w-auto sm:text-base">
+          <i data-lucide="message-circle" class="h-4 w-4"></i>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="reveal mx-auto mt-14 max-w-5xl" style="transition-delay:320ms">
+        <div class="glass rounded-2xl p-1">
+          <div class="rounded-[14px] bg-gradient-to-b from-white/[0.05] to-transparent">
+            <div class="grid grid-cols-2 divide-white/10 sm:divide-x lg:grid-cols-4">
+
+              <div class="group flex flex-col items-center gap-2 px-4 py-6 text-center transition-colors hover:bg-white/[0.03]">
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-amber-400/10 text-amber-400 ring-1 ring-inset ring-amber-400/20 transition-transform duration-300 group-hover:scale-110">
+                  <i data-lucide="star" class="h-5 w-5"></i>
+                </div>
+                <div class="font-display text-xl font-bold text-white sm:text-2xl">4.8<span class="text-sm text-amber-400">★</span></div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 sm:text-xs">Google Rating · 86+ Reviews</div>
+              </div>
+
+              <div class="group flex flex-col items-center gap-2 px-4 py-6 text-center transition-colors hover:bg-white/[0.03]">
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-electric/10 text-electric ring-1 ring-inset ring-electric/20 transition-transform duration-300 group-hover:scale-110">
+                  <i data-lucide="user-check" class="h-5 w-5"></i>
+                </div>
+                <div class="font-display text-xl font-bold text-white sm:text-2xl">1-on-1</div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 sm:text-xs">Personal Mentorship</div>
+              </div>
+
+              <div class="group flex flex-col items-center gap-2 px-4 py-6 text-center transition-colors hover:bg-white/[0.03]">
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-neon/10 text-neon ring-1 ring-inset ring-neon/20 transition-transform duration-300 group-hover:scale-110">
+                  <i data-lucide="flask-conical" class="h-5 w-5"></i>
+                </div>
+                <div class="font-display text-xl font-bold text-white sm:text-2xl">Practical</div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 sm:text-xs">Lab-First Approach</div>
+              </div>
+
+              <div class="group flex flex-col items-center gap-2 px-4 py-6 text-center transition-colors hover:bg-white/[0.03]">
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-aqua/10 text-aqua ring-1 ring-inset ring-aqua/20 transition-transform duration-300 group-hover:scale-110">
+                  <i data-lucide="trophy" class="h-5 w-5"></i>
+                </div>
+                <div class="font-display text-xl font-bold text-white sm:text-2xl">High Ratio</div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 sm:text-xs">JEE / NEET Selection</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-obsidian to-transparent"></div>
+</section>
+
+<!-- ============================================================
+     THE ASHISH SIR EDGE
+============================================================ -->
+<section id="edge" class="relative overflow-hidden py-24 sm:py-32">
+  <div class="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-neon/10 blur-[140px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-neon/25 bg-neon/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-neon">
+        <i data-lucide="sparkles" class="h-3.5 w-3.5"></i>
+        The Spotlight
+      </div>
+
+      <h2 class="reveal mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" style="transition-delay:80ms">
+        The <span class="text-gradient">Ashish Sir</span> Edge
+      </h2>
+
+      <p class="reveal mt-4 text-sm leading-relaxed text-slate-400 sm:text-base" style="transition-delay:140ms">
+        Physics isn't memorised here — it's <span class="text-slate-200 font-medium">visualised, questioned, and mastered</span>.
+        Led by <span class="text-white font-semibold">Ashish Sir</span>, Physics Maestro &amp; Founder of Veritas Education.
+      </p>
+    </div>
+
+    <!-- Mentor strip -->
+    <div class="reveal mx-auto mt-12 max-w-3xl" style="transition-delay:180ms">
+      <div class="glass flex flex-col items-center gap-5 rounded-2xl p-6 sm:flex-row sm:gap-6">
+        <div class="relative shrink-0">
+          <div class="grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-electric via-neon to-aqua shadow-[0_0_40px_-8px_rgba(139,92,246,0.9)]">
+            <span class="font-display text-2xl font-bold text-white">AS</span>
+          </div>
+          <span class="absolute -bottom-1 -right-1 grid h-7 w-7 place-items-center rounded-full bg-obsidian ring-1 ring-white/15">
+            <i data-lucide="zap" class="h-3.5 w-3.5 text-amber-400"></i>
+          </span>
+        </div>
+        <div class="text-center sm:text-left">
+          <h3 class="font-display text-lg font-bold text-white">Ashish Sir</h3>
+          <p class="mt-0.5 text-sm font-medium text-electric">Physics Maestro &amp; Founder — Veritas Education</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-400">
+            Renowned in Kanpur for transforming how students *see* physics — from "formula recall" to genuine conceptual intuition.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
+
+      <!-- A -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7 lg:col-span-2">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-electric/15 blur-3xl transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="relative">
+          <div class="mb-5 inline-grid h-12 w-12 place-items-center rounded-xl bg-electric/10 text-electric ring-1 ring-inset ring-electric/25">
+            <i data-lucide="atom" class="h-6 w-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white sm:text-2xl">Real-Life Physics Visualization</h3>
+          <p class="mt-3 max-w-xl text-sm leading-relaxed text-slate-400">
+            Moving far beyond rote memorisation. Mechanics, electromagnetism, and optics are taught through
+            <span class="text-slate-200 font-medium">practical, real-world examples</span> — so every formula has a
+            physical picture behind it. When you can *see* the concept, the problem-solving becomes automatic.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-slate-300">Mechanics</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-slate-300">Electromagnetism</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-slate-300">Optics</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-slate-300">Modern Physics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7" style="transition-delay:80ms">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-neon/15 blur-3xl"></div>
+        <div class="relative">
+          <div class="mb-5 inline-grid h-12 w-12 place-items-center rounded-xl bg-neon/10 text-neon ring-1 ring-inset ring-neon/25">
+            <i data-lucide="mic" class="h-6 w-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white">"TED-Talk" Style Sessions</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            High-energy motivational and conceptual discussions that build analytical thinking, exam temperament,
+            and a genuine love for the subject.
+          </p>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7" style="transition-delay:140ms">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-aqua/15 blur-3xl"></div>
+        <div class="relative">
+          <div class="mb-5 inline-grid h-12 w-12 place-items-center rounded-xl bg-aqua/10 text-aqua ring-1 ring-inset ring-aqua/25">
+            <i data-lucide="life-buoy" class="h-6 w-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white">1-on-1 Doubt &amp; Lab Support</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Dedicated attention to every student's weak areas — plus full guidance for school practicals,
+            viva, and record work.
+          </p>
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7 lg:col-span-2" style="transition-delay:200ms">
+        <div class="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-neon/15 blur-3xl"></div>
+        <div class="relative flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div class="shrink-0">
+            <div class="inline-grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-electric/20 to-neon/20 text-white ring-1 ring-inset ring-white/20">
+              <i data-lucide="clipboard-check" class="h-6 w-6"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white">Result-Driven Test Series &amp; Analysis</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400">
+              Regular JEE/NEET-pattern testing with detailed performance analytics, error logs, and personalised
+              improvement roadmaps. You always know exactly where you stand — and what to fix next.
+            </p>
+            <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+              <div class="rounded-xl border border-white/10 bg-white/[0.03] py-3">
+                <div class="font-display text-lg font-bold text-white">Weekly</div>
+                <div class="text-[10px] uppercase tracking-wider text-slate-500">Tests</div>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-white/[0.03] py-3">
+                <div class="font-display text-lg font-bold text-white">1-on-1</div>
+                <div class="text-[10px] uppercase tracking-wider text-slate-500">Analysis</div>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-white/[0.03] py-3">
+                <div class="font-display text-lg font-bold text-white">Error</div>
+                <div class="text-[10px] uppercase tracking-wider text-slate-500">Logs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROGRAMS / COURSES
+============================================================ -->
+<section id="programs" class="relative overflow-hidden py-24 sm:py-32">
+  <div class="pointer-events-none absolute right-0 top-1/4 h-[420px] w-[420px] rounded-full bg-electric/10 blur-[140px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-electric/25 bg-electric/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-electric">
+        <i data-lucide="book-open" class="h-3.5 w-3.5"></i>
+        Programs
+      </div>
+      <h2 class="reveal mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" style="transition-delay:80ms">
+        Courses Built For <span class="text-gradient">Results</span>
+      </h2>
+      <p class="reveal mt-4 text-sm leading-relaxed text-slate-400 sm:text-base" style="transition-delay:140ms">
+        Choose your track. Every batch is limited in size to guarantee personal attention and measurable progress.
+      </p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="reveal mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3" style="transition-delay:180ms">
+      <button class="tab-btn active rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-xs font-semibold text-slate-300 sm:text-sm" data-filter="all">All Programs</button>
+      <button class="tab-btn rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-xs font-semibold text-slate-300 sm:text-sm" data-filter="competitive">JEE / NEET</button>
+      <button class="tab-btn rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-xs font-semibold text-slate-300 sm:text-sm" data-filter="foundation">Foundation</button>
+    </div>
+
+    <!-- Course Grid -->
+    <div id="courseGrid" class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+
+      <!-- Course 1 -->
+      <article class="course-card reveal lift glass group relative overflow-hidden rounded-2xl p-7" data-cat="competitive">
+        <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-electric/15 blur-3xl"></div>
+        <div class="relative flex h-full flex-col">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-electric/30 bg-electric/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-electric">
+                <i data-lucide="rocket" class="h-3 w-3"></i> IIT-JEE
+              </span>
+              <h3 class="mt-4 font-display text-xl font-bold text-white sm:text-2xl">Target Batch</h3>
+              <p class="mt-1 text-sm font-medium text-slate-400">IIT-JEE Mains &amp; Advanced</p>
+            </div>
+            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-electric/10 text-electric ring-1 ring-inset ring-electric/25">
+              <i data-lucide="atom" class="h-6 w-6"></i>
+            </div>
+          </div>
+
+          <div class="mt-5 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-slate-300">
+            <i data-lucide="clock" class="h-3.5 w-3.5 text-aqua"></i>
+            <span class="font-semibold text-white">Batch Timings:</span> 4:00 PM – 6:00 PM (Mon–Sat)
+          </div>
+
+          <ul class="mt-5 space-y-2.5 text-sm text-slate-400">
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Deep conceptual Physics &amp; problem-solving mechanics</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> JEE Advanced-level numerical &amp; multi-concept drills</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Weekly JEE-pattern tests with detailed error analysis</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> 1-on-1 mentorship &amp; personalised revision roadmap</li>
+          </ul>
+
+          <div class="mt-auto pt-6">
+            <button data-enquire="Target Batch (IIT-JEE Mains & Advanced)"
+                    class="btn-glow inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-electric to-neon px-5 py-3 text-sm font-semibold text-white">
+              <i data-lucide="message-circle" class="h-4 w-4"></i> Enquire Now
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 2 -->
+      <article class="course-card reveal lift glass group relative overflow-hidden rounded-2xl p-7" data-cat="competitive" style="transition-delay:80ms">
+        <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-emerald-500/15 blur-3xl"></div>
+        <div class="relative flex h-full flex-col">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
+                <i data-lucide="heart-pulse" class="h-3 w-3"></i> NEET UG
+              </span>
+              <h3 class="mt-4 font-display text-xl font-bold text-white sm:text-2xl">Medical Batch</h3>
+              <p class="mt-1 text-sm font-medium text-slate-400">NEET UG — Physics &amp; Core Sciences</p>
+            </div>
+            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-300 ring-1 ring-inset ring-emerald-400/25">
+              <i data-lucide="stethoscope" class="h-6 w-6"></i>
+            </div>
+          </div>
+
+          <div class="mt-5 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-slate-300">
+            <i data-lucide="clock" class="h-3.5 w-3.5 text-aqua"></i>
+            <span class="font-semibold text-white">Batch Timings:</span> 6:00 PM – 8:00 PM (Mon–Sat)
+          </div>
+
+          <ul class="mt-5 space-y-2.5 text-sm text-slate-400">
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Speed, accuracy &amp; NCERT line-by-line mastery</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Advanced numerical problem-solving for Physics &amp; Biology-linked concepts</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Full-length NEET mock tests with OMR practice</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Time-management &amp; exam-temperament coaching</li>
+          </ul>
+
+          <div class="mt-auto pt-6">
+            <button data-enquire="Medical Batch (NEET UG)"
+                    class="btn-glow inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-aqua px-5 py-3 text-sm font-semibold text-white">
+              <i data-lucide="message-circle" class="h-4 w-4"></i> Enquire Now
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 3 -->
+      <article class="course-card reveal lift glass group relative overflow-hidden rounded-2xl p-7" data-cat="foundation" style="transition-delay:140ms">
+        <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-neon/15 blur-3xl"></div>
+        <div class="relative flex h-full flex-col">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-neon/30 bg-neon/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-neon">
+                <i data-lucide="blocks" class="h-3 w-3"></i> Class 10
+              </span>
+              <h3 class="mt-4 font-display text-xl font-bold text-white sm:text-2xl">Foundation Builder</h3>
+              <p class="mt-1 text-sm font-medium text-slate-400">Class 10th — Board + Competitive Base</p>
+            </div>
+            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-neon/10 text-neon ring-1 ring-inset ring-neon/25">
+              <i data-lucide="layers" class="h-6 w-6"></i>
+            </div>
+          </div>
+
+          <div class="mt-5 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-slate-300">
+            <i data-lucide="clock" class="h-3.5 w-3.5 text-aqua"></i>
+            <span class="font-semibold text-white">Batch Timings:</span> 4:00 PM – 5:30 PM (Mon–Sat)
+          </div>
+
+          <ul class="mt-5 space-y-2.5 text-sm text-slate-400">
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Board exam excellence with concept-first teaching</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Early competitive base-building for JEE / NEET</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Practical lab exposure &amp; school project guidance</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Chapter-wise tests + doubt-clearing sessions</li>
+          </ul>
+
+          <div class="mt-auto pt-6">
+            <button data-enquire="Foundation Builder (Class 10th)"
+                    class="btn-glow inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-neon to-electric px-5 py-3 text-sm font-semibold text-white">
+              <i data-lucide="message-circle" class="h-4 w-4"></i> Enquire Now
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 4 -->
+      <article class="course-card reveal lift glass group relative overflow-hidden rounded-2xl p-7" data-cat="foundation" style="transition-delay:200ms">
+        <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-aqua/15 blur-3xl"></div>
+        <div class="relative flex h-full flex-col">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-aqua/30 bg-aqua/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-aqua">
+                <i data-lucide="graduation-cap" class="h-3 w-3"></i> Class 11 &amp; 12
+              </span>
+              <h3 class="mt-4 font-display text-xl font-bold text-white sm:text-2xl">Foundation Elite</h3>
+              <p class="mt-1 text-sm font-medium text-slate-400">Class 11th &amp; 12th — Boards + Competitive</p>
+            </div>
+            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-aqua/10 text-aqua ring-1 ring-inset ring-aqua/25">
+              <i data-lucide="target" class="h-6 w-6"></i>
+            </div>
+          </div>
+
+          <div class="mt-5 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-slate-300">
+            <i data-lucide="clock" class="h-3.5 w-3.5 text-aqua"></i>
+            <span class="font-semibold text-white">Batch Timings:</span> 5:30 PM – 8:00 PM (Mon–Sat)
+          </div>
+
+          <ul class="mt-5 space-y-2.5 text-sm text-slate-400">
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Dual-track: Board scoring + JEE/NEET readiness</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Concept-first Physics with real-life visualisation</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Practical lab support, viva &amp; record preparation</li>
+            <li class="flex items-start gap-2.5"><i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"></i> Personal mentorship + performance tracking</li>
+          </ul>
+
+          <div class="mt-auto pt-6">
+            <button data-enquire="Foundation Elite (Class 11th & 12th)"
+                    class="btn-glow inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-aqua to-neon px-5 py-3 text-sm font-semibold text-white">
+              <i data-lucide="message-circle" class="h-4 w-4"></i> Enquire Now
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Note -->
+    <p class="reveal mt-8 text-center text-xs text-slate-500">
+      <i data-lucide="info" class="mr-1 inline h-3.5 w-3.5 align-[-2px]"></i>
+      Batch timings may vary by section. Call <a href="tel:08948411505" class="text-electric hover:underline">089484 11505</a> to confirm the latest schedule.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FACULTY
+============================================================ -->
+<section id="faculty" class="relative overflow-hidden py-24 sm:py-32">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+  <div class="pointer-events-none absolute left-0 top-1/3 h-[400px] w-[400px] rounded-full bg-neon/10 blur-[140px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-aqua/25 bg-aqua/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-aqua">
+        <i data-lucide="users" class="h-3.5 w-3.5"></i>
+        Core Faculty
+      </div>
+      <h2 class="reveal mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" style="transition-delay:80ms">
+        The Pillars of <span class="text-gradient">Veritas</span>
+      </h2>
+      <p class="reveal mt-4 text-sm leading-relaxed text-slate-400 sm:text-base" style="transition-delay:140ms">
+        A tight-knit team of mentors who know every student by name — and by their weakest chapter.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Ashish Sir -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-6 text-center">
+        <div class="pointer-events-none absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-electric/25 to-transparent blur-2xl"></div>
+        <div class="relative">
+          <div class="mx-auto grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-electric via-neon to-aqua shadow-[0_0_35px_-8px_rgba(59,130,246,0.95)] transition-transform duration-500 group-hover:scale-105">
+            <span class="font-display text-2xl font-bold text-white">AS</span>
+          </div>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Ashish Sir</h3>
+          <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-electric">Senior Physics Faculty &amp; Mentor</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Founder of Veritas. Known for making physics visual, intuitive and genuinely exciting.</p>
+          <div class="mt-4 flex justify-center gap-2">
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Physics</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">JEE Advanced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GD Sir -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-6 text-center" style="transition-delay:80ms">
+        <div class="pointer-events-none absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-neon/25 to-transparent blur-2xl"></div>
+        <div class="relative">
+          <div class="mx-auto grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-neon to-electric shadow-[0_0_35px_-8px_rgba(139,92,246,0.95)] transition-transform duration-500 group-hover:scale-105">
+            <span class="font-display text-2xl font-bold text-white">GD</span>
+          </div>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">GD Sir</h3>
+          <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-neon">Senior Academic Mentor</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Guides academic strategy, syllabus pacing and consistent, disciplined preparation.</p>
+          <div class="mt-4 flex justify-center gap-2">
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Mentorship</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adarsh Sir -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-6 text-center" style="transition-delay:140ms">
+        <div class="pointer-events-none absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-aqua/25 to-transparent blur-2xl"></div>
+        <div class="relative">
+          <div class="mx-auto grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-aqua to-neon shadow-[0_0_35px_-8px_rgba(6,182,212,0.95)] transition-transform duration-500 group-hover:scale-105">
+            <span class="font-display text-2xl font-bold text-white">AS</span>
+          </div>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Adarsh Sir</h3>
+          <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-aqua">Core Subject Expert</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Sharp, structured teaching that turns difficult topics into simple, repeatable steps.</p>
+          <div class="mt-4 flex justify-center gap-2">
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Concepts</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Numericals</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shrish Sir -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-6 text-center" style="transition-delay:200ms">
+        <div class="pointer-events-none absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-amber-400/25 to-transparent blur-2xl"></div>
+        <div class="relative">
+          <div class="mx-auto grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-amber-400 to-neon shadow-[0_0_35px_-8px_rgba(251,191,36,0.9)] transition-transform duration-500 group-hover:scale-105">
+            <span class="font-display text-2xl font-bold text-white">SS</span>
+          </div>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Shrish Sir</h3>
+          <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-amber-300">Competitive Exam Strategist</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Builds the exam-day game plan: attempt strategy, time control and accuracy under pressure.</p>
+          <div class="mt-4 flex justify-center gap-2">
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Test Series</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-slate-300">Rank Boost</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="reviews" class="relative overflow-hidden py-24 sm:py-32">
+  <div class="pointer-events-none absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-neon/10 blur-[140px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
+        <i data-lucide="heart" class="h-3.5 w-3.5"></i>
+        Wall of Love
+      </div>
+      <h2 class="reveal mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" style="transition-delay:80ms">
+        What Our Students <span class="text-gradient">Say</span>
+      </h2>
+
+      <!-- Rating summary -->
+      <div class="reveal mt-6 inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 backdrop-blur-md" style="transition-delay:140ms">
+        <div class="flex items-center gap-1 text-amber-400">
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+        </div>
+        <span class="font-display text-lg font-bold text-white">4.8</span>
+        <span class="h-4 w-px bg-white/15"></span>
+        <span class="text-sm text-slate-400">Based on <span class="font-semibold text-white">86+ Google Reviews</span></span>
+      </div>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2">
+
+      <!-- Review 1 -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7">
+        <i data-lucide="quote" class="absolute right-6 top-6 h-10 w-10 text-white/[0.06]"></i>
+        <div class="flex items-center gap-1 text-amber-400">
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-300">
+          "Ashish Sir's practical approach to Physics completely changed how I look at the subject. Concepts like
+          rotational motion and electromagnetism finally made sense because he showed us the real-life picture first.
+          My JEE Mains Physics score jumped massively."
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-electric to-neon font-display text-sm font-bold text-white">AV</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Aditya Verma</div>
+            <div class="text-xs text-slate-500">JEE Aspirant · Class 12</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7" style="transition-delay:80ms">
+        <i data-lucide="quote" class="absolute right-6 top-6 h-10 w-10 text-white/[0.06]"></i>
+        <div class="flex items-center gap-1 text-amber-400">
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-300">
+          "The regular test series and personal doubt sessions are the reason I improved my NEET Physics accuracy
+          so much. The environment is friendly and there is no hesitation in asking even the silliest doubt.
+          Truly the best coaching in Kanpur."
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-emerald-400 to-aqua font-display text-sm font-bold text-white">SG</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Sneha Gupta</div>
+            <div class="text-xs text-slate-500">NEET Aspirant · Dropper</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7" style="transition-delay:140ms">
+        <i data-lucide="quote" class="absolute right-6 top-6 h-10 w-10 text-white/[0.06]"></i>
+        <div class="flex items-center gap-1 text-amber-400">
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-300">
+          "Best coaching for Physics in Kanpur, hands down. Ashish Sir is extremely supportive and genuinely
+          cares about every student's progress. The 1-on-1 guidance helped me fix exactly the chapters I was
+          weak in before my boards."
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-neon to-aqua font-display text-sm font-bold text-white">RS</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Rohan Srivastava</div>
+            <div class="text-xs text-slate-500">Class 12 · Board + JEE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="reveal lift glass group relative overflow-hidden rounded-2xl p-7" style="transition-delay:200ms">
+        <i data-lucide="quote" class="absolute right-6 top-6 h-10 w-10 text-white/[0.06]"></i>
+        <div class="flex items-center gap-1 text-amber-400">
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+          <i data-lucide="star" class="h-4 w-4 fill-amber-400"></i>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-300">
+          "The TED-talk style sessions before exams kept us motivated when we were completely drained.
+          It never felt like a typical boring coaching class — the energy here is different. Highly recommended
+          for anyone serious about JEE or NEET."
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-amber-400 to-neon font-display text-sm font-bold text-white">PM</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Priya Mishra</div>
+            <div class="text-xs text-slate-500">Foundation Elite · Class 11</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal mt-10 text-center">
+      <a href="https://maps.app.goo.gl/1iZGGzmSxZntyEyd9?g_st=ac" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/40 hover:text-white hover:shadow-[0_0_35px_-12px_rgba(59,130,246,0.9)]">
+        <i data-lucide="map-pin" class="h-4 w-4 text-electric"></i>
+        View All Google Reviews
+        <i data-lucide="arrow-up-right" class="h-4 w-4 text-slate-500"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT + ENQUIRY
+============================================================ -->
+<section id="contact" class="relative overflow-hidden py-24 sm:py-32">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+  <div class="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-electric/10 blur-[150px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-electric/25 bg-electric/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-electric">
+        <i data-lucide="send" class="h-3.5 w-3.5"></i>
+        Get In Touch
+      </div>
+      <h2 class="reveal mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" style="transition-delay:80ms">
+        Book Your <span class="text-gradient">Demo Class</span>
+      </h2>
+      <p class="reveal mt-4 text-sm leading-relaxed text-slate-400 sm:text-base" style="transition-delay:140ms">
+        Fill in the details below — we'll instantly connect you on WhatsApp with the right batch information.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-5">
+
+      <!-- LEFT: Info -->
+      <div class="lg:col-span-2 space-y-5">
+
+        <!-- Timings -->
+        <div class="reveal lift glass rounded-2xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-aqua/10 text-aqua ring-1 ring-inset ring-aqua/25">
+              <i data-lucide="clock" class="h-5 w-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display text-base font-bold text-white">Institute Timings</h3>
+              <p class="mt-2 text-sm text-slate-300">Monday – Saturday</p>
+              <p class="text-lg font-semibold text-white">4:00 PM – 9:00 PM</p>
+              <p class="mt-1 inline-flex items-center gap-1.5 text-xs text-rose-400">
+                <i data-lucide="calendar-x" class="h-3.5 w-3.5"></i> Sunday Closed
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="reveal lift glass rounded-2xl p-6" style="transition-delay:80ms">
+          <div class="flex items-start gap-4">
+            <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-electric/10 text-electric ring-1 ring-inset ring-electric/25">
+              <i data-lucide="map-pin" class="h-5 w-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display text-base font-bold text-white">Visit Us</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                112/321, Mall Road, Benajhabar, Shivaji Chouraha, Harsh Nagar
+                <span class="text-slate-500">(Near Hotel Royal Cliff / Khalasi Line)</span>,
+                Kanpur, Uttar Pradesh – 208002
+              </p>
+              <a href="https://maps.app.goo.gl/1iZGGzmSxZntyEyd9?g_st=ac" target="_blank" rel="noopener"
+                 class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-electric transition hover:text-blue-300">
+                Get Directions <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="reveal lift glass rounded-2xl p-6" style="transition-delay:140ms">
+          <div class="flex items-start gap-4">
+            <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-neon/10 text-neon ring-1 ring-inset ring-neon/25">
+              <i data-lucide="phone" class="h-5 w-5"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-display text-base font-bold text-white">Call / WhatsApp</h3>
+              <a href="tel:08948411505" class="mt-2 block text-lg font-semibold text-white transition hover:text-electric">089484 11505</a>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <a href="tel:08948411505"
+                   class="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-electric/40 hover:text-white">
+                  <i data-lucide="phone-call" class="h-3.5 w-3.5 text-electric"></i> Call Now
+                </a>
+                <a href="https://wa.me/918948411505" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-400/25 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-300 transition hover:border-emerald-400/60 hover:bg-emerald-500/20">
+                  <i data-lucide="message-circle" class="h-3.5 w-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="reveal glass rounded-2xl p-5" style="transition-delay:200ms">
+          <div class="flex items-center gap-3">
+            <div class="flex -space-x-2">
+              <div class="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-electric to-neon text-[10px] font-bold text-white ring-2 ring-obsidian">AV</div>
+              <div class="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-emerald-400 to-aqua text-[10px] font-bold text-white ring-2 ring-obsidian">SG</div>
+              <div class="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-neon to-aqua text-[10px] font-bold text-white ring-2 ring-obsidian">RS</div>
+              <div class="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-[10px] font-bold text-white ring-2 ring-obsidian">+83</div>
+            </div>
+            <p class="text-xs leading-relaxed text-slate-400">
+              Join <span class="font-semibold text-white">86+ students</span> who rated us
+              <span class="font-semibold text-amber-400">4.8★</span> on Google.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="reveal lg:col-span-3" style="transition-delay:120ms">
+        <div class="relative rounded-2xl bg-gradient-to-br from-electric/40 via-neon/30 to-aqua/30 p-[1px]">
+          <div class="rounded-[15px] bg-midnight/90 backdrop-blur-xl p-6 sm:p-8">
+
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-electric to-neon text-white">
+                <i data-lucide="user-plus" class="h-5 w-5"></i>
+              </div>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Admission Enquiry</h3>
+                <p class="text-xs text-slate-400">We reply on WhatsApp within minutes.</p>
+              </div>
+            </div>
+
+            <form id="enquiryForm" class="mt-7 space-y-5" novalidate>
+
+              <!-- Name -->
+              <div>
+                <label for="studentName" class="mb-2 block text-sm font-medium text-slate-300">Student Name <span class="text-rose-400">*</span></label>
+                <div class="relative">
+                  <i data-lucide="user" class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"></i>
+                  <input id="studentName" name="studentName" type="text" autocomplete="name" placeholder="e.g. Aditya Verma"
+                         class="field w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-500" />
+                </div>
+                <p class="err mt-1.5 hidden text-xs font-medium text-rose-400" data-err="studentName"></p>
+              </div>
+
+              <!-- Class + Target -->
+              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="studentClass" class="mb-2 block text-sm font-medium text-slate-300">Class <span class="text-rose-400">*</span></label>
+                  <div class="relative">
+                    <i data-lucide="graduation-cap" class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"></i>
+                    <select id="studentClass" name="studentClass"
+                            class="field w-full appearance-none rounded-xl border border-white/10 bg-white/5 py-3.5 pl-11 pr-10 text-sm text-white">
+                      <option value="" disabled selected class="bg-midnight">Select Class</option>
+                      <option value="Class 10th" class="bg-midnight">Class 10th</option>
+                      <option value="Class 11th" class="bg-midnight">Class 11th</option>
+                      <option value="Class 12th" class="bg-midnight">Class 12th</option>
+                      <option value="Dropper" class="bg-midnight">Dropper</option>
+                    </select>
+                    <i data-lucide="chevron-down" class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"></i>
+                  </div>
+                  <p class="err mt-1.5 hidden text-xs font-medium text-rose-400" data-err="studentClass"></p>
+                </div>
+
+                <div>
+                  <label for="targetExam" class="mb-2 block text-sm font-medium text-slate-300">Target Exam <span class="text-rose-400">*</span></label>
+                  <div class="relative">
+                    <i data-lucide="target" class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"></i>
+                    <select id="targetExam" name="targetExam"
+                            class="field w-full appearance-none rounded-xl border border-white/10 bg-white/5 py-3.5 pl-11 pr-10 text-sm text-white">
+                      <option value="" disabled selected class="bg-midnight">Select Target</option>
+                      <option value="JEE (Mains & Advanced)" class="bg-midnight">JEE (Mains &amp; Advanced)</option>
+                      <option value="NEET UG" class="bg-midnight">NEET UG</option>
+                      <option value="Board Exams" class="bg-midnight">Board Exams</option>
+                      <option value="Board + JEE/NEET" class="bg-midnight">Board + JEE/NEET</option>
+                    </select>
+                    <i data-lucide="chevron-down" class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"></i>
+                  </div>
+                  <p class="err mt-1.5 hidden text-xs font-medium text-rose-400" data-err="targetExam"></p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label for="phone" class="mb-2 block text-sm font-medium text-slate-300">Phone Number <span class="text-rose-400">*</span></label>
+                <div class="relative">
+                  <i data-lucide="phone" class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"></i>
+                  <span class="pointer-events-none absolute left-11 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">+91</span>
+                  <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="98765 43210"
+                         class="field w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-[5.2rem] pr-4 text-sm text-white placeholder-slate-500" />
+                </div>
+                <p class="err mt-1.5 hidden text-xs font-medium text-rose-400" data-err="phone"></p>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit"
+                      class="btn-glow group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-500 to-aqua px-6 py-4 text-sm font-bold text-white sm:text-base">
+                <i data-lucide="send" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                Submit Enquiry via WhatsApp
+              </button>
+
+              <p class="flex items-start gap-2 text-[11px] leading-relaxed text-slate-500">
+                <i data-lucide="shield-check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-400"></i>
+                Your details are safe. Clicking submit opens WhatsApp with your enquiry pre-filled — just hit send.
+              </p>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="relative overflow-hidden border-t border-white/10 bg-midnight/40 pt-16">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-px shimmer-line"></div>
+  <div class="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-electric/10 blur-[120px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-electric via-neon to-aqua shadow-[0_0_22px_-4px_rgba(59,130,246,0.9)]">
+            <span class="font-display text-lg font-bold text-white">V</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-lg font-bold tracking-[0.18em] text-white">VERITAS</div>
+            <div class="text-[9px] uppercase tracking-[0.22em] text-electric/90 font-medium">The Physics &amp; Competitive Hub</div>
+          </div>
+        </div>
+        <p class="mt-5 max-w-md text-sm leading-relaxed text-slate-400">
+          Kanpur's most trusted institute for IIT-JEE, NEET and Class 10th–12th Board Foundation.
+          We don't teach formulas — we build intuition.
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="tel:08948411505" aria-label="Call Veritas Education"
+             class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric">
+            <i data-lucide="phone" class="h-4 w-4"></i>
+          </a>
+          <a href="https://wa.me/918948411505" target="_blank" rel="noopener" aria-label="WhatsApp Veritas Education"
+             class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-emerald-400/50 hover:text-emerald-400">
+            <i data-lucide="message-circle" class="h-4 w-4"></i>
+          </a>
+          <a href="https://maps.app.goo.gl/1iZGGzmSxZntyEyd9?g_st=ac" target="_blank" rel="noopener" aria-label="Veritas Education on Google Maps"
+             class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-neon/50 hover:text-neon">
+            <i data-lucide="map-pin" class="h-4 w-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">Quick Links</h4>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="#home" class="text-slate-400 transition hover:text-electric">Home</a></li>
+          <li><a href="#programs" class="text-slate-400 transition hover:text-electric">Programs</a></li>
+          <li><a href="#edge" class="text-slate-400 transition hover:text-electric">The Ashish Sir Edge</a></li>
+          <li><a href="#faculty" class="text-slate-400 transition hover:text-electric">Faculty</a></li>
+          <li><a href="#reviews" class="text-slate-400 transition hover:text-electric">Reviews</a></li>
+          <li><a href="#contact" class="text-slate-400 transition hover:text-electric">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">Reach Us</h4>
+        <ul class="mt-5 space-y-4 text-sm text-slate-400">
+          <li class="flex items-start gap-3">
+            <i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-electric"></i>
+            <span>112/321, Mall Road, Benajhabar, Shivaji Chouraha, Harsh Nagar, Kanpur, UP – 208002</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="phone" class="mt-0.5 h-4 w-4 shrink-0 text-electric"></i>
+            <a href="tel:08948411505" class="transition hover:text-white">089484 11505</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="clock" class="mt-0.5 h-4 w-4 shrink-0 text-electric"></i>
+            <span>Mon – Sat: 4:00 PM – 9:00 PM<br /><span class="text-rose-400">Sunday Closed</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 sm:flex-row">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Veritas Education, Kanpur. All rights reserved.</p>
+      <p class="flex items-center gap-1.5 text-xs text-slate-500">
+        Crafted with <i data-lucide="heart" class="h-3.5 w-3.5 fill-rose-500 text-rose-500"></i> for the next generation of engineers &amp; doctors.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING WHATSAPP BUTTON
+============================================================ -->
+<a href="https://wa.me/918948411505" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="group fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-[0_10px_40px_-8px_rgba(16,185,129,0.9)] transition-transform duration-300 hover:scale-110 sm:bottom-7 sm:right-7">
+  <span class="ping-slow absolute inset-0 rounded-full"></span>
+  <i data-lucide="message-circle" class="relative h-6 w-6"></i>
+  <span class="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-lg border border-white/10 bg-midnight/95 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md group-hover:block">
+    Chat with us
+  </span>
+</a>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------------------------------------------------
+     0. Icon init
+  --------------------------------------------------------- */
+  function refreshIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  }
+  refreshIcons();
+
+  /* ---------------------------------------------------------
+     1. Footer year
+  --------------------------------------------------------- */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------------
+     2. Navbar scroll state
+  --------------------------------------------------------- */
+  const navShell = document.getElementById('navShell');
+  function onScrollNav() {
+    if (window.scrollY > 20) {
+      navShell.classList.add('bg-obsidian/85', 'shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]', 'border-white/15');
+      navShell.classList.remove('bg-white/[0.04]');
+    } else {
+      navShell.classList.remove('bg-obsidian/85', 'shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]', 'border-white/15');
+      navShell.classList.add('bg-white/[0.04]');
+    }
+  }
+  window.addEventListener('scroll', onScrollNav, { passive: true });
+  onScrollNav();
+
+  /* ---------------------------------------------------------
+     3. Mobile menu
+  --------------------------------------------------------- */
+  const menuBtn = document.getElementById('menuBtn');
+  const menuIcon = document.getElementById('menuIcon');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let menuOpen = false;
+
+  function setMenu(open) {
+    menuOpen = open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    if (open) {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 40 + 'px';
+      mobileMenu.style.opacity = '1';
+      menuIcon.setAttribute('data-lucide', 'x');
+    } else {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      menuIcon.setAttribute('data-lucide', 'menu');
+    }
+    // Rebuild the icon element for lucide
+    const parent = menuIcon.parentNode;
+    const fresh = document.createElement('i');
+    fresh.id = 'menuIcon';
+    fresh.className = 'h-5 w-5';
+    fresh.setAttribute('data-lucide', open ? 'x' : 'menu');
+    parent.replaceChild(fresh, menuIcon);
+    refreshIcons();
+  }
+
+  // Re-bind after the icon node replacement
+  menuBtn.addEventListener('click', function () {
+    setMenu(!menuOpen);
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (menuOpen) setMenu(false);
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 1024 && menuOpen) setMenu(false);
+  });
+
+  /* ---------------------------------------------------------
+     4. Active nav link on scroll (desktop)
+  --------------------------------------------------------- */
+  const navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+  const sections = navLinks
+    .map(function (l) { return document.querySelector(l.getAttribute('href')); })
+    .filter(Boolean);
+
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 140;
+    let current = sections[0];
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= scrollPos) current = sec;
+    });
+    navLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  /* ---------------------------------------------------------
+     5. Reveal on scroll
+  --------------------------------------------------------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------------------------------------------------------
+     6. Course filter tabs
+  --------------------------------------------------------- */
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const courseCards = document.querySelectorAll('.course-card');
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      courseCards.forEach(function (card) {
+        const cat = card.getAttribute('data-cat');
+        const show = (filter === 'all' || cat === filter);
+
+        if (show) {
+          card.classList.remove('hide');
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(14px)';
+          // force reflow
+          void card.offsetWidth;
+          requestAnimationFrame(function () {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          });
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(14px)';
+          window.setTimeout(function () { card.classList.add('hide'); }, 180);
+        }
+      });
+    });
+  });
+
+  /* ---------------------------------------------------------
+     7. Course "Enquire Now" -> WhatsApp
+  --------------------------------------------------------- */
+  const WHATSAPP_NUMBER = '918948411505';
+
+  document.querySelectorAll('[data-enquire]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const course = btn.getAttribute('data-enquire');
+      const message =
+        'Hello Veritas Education! 👋\n\n' +
+        'I am interested in the *' + course + '* batch.\n\n' +
+        'Please share:\n' +
+        '• Batch timings\n' +
+        '• Fee structure\n' +
+        '• Demo class availability\n\n' +
+        'Thank you!';
+      const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+      window.open(url, '_blank', 'noopener');
+    });
+  });
+
+  /* ---------------------------------------------------------
+     8. Admission Enquiry Form -> WhatsApp
+  --------------------------------------------------------- */
+  const form = document.getElementById('enquiryForm');
+  const nameInput = document.getElementById('studentName');
+  const classSelect = document.getElementById('studentClass');
+  const examSelect = document.getElementById('targetExam');
+  const phoneInput = document.getElementById('phone');
+
+  function showError(fieldName, message) {
+    const el = document.querySelector('[data-err="' + fieldName + '"]');
+    if (el) {
+      el.textContent = message;
+      el.classList.remove('hidden');
+    }
+  }
+
+  function clearError(fieldName) {
+    const el = document.querySelector('[data-err="' + fieldName + '"]');
+    if (el) {
+      el.textContent = '';
+      el.classList.add('hidden');
+    }
+  }
+
+  function clearAllErrors() {
+    ['studentName', 'studentClass', 'targetExam', 'phone'].forEach(clearError);
+  }
+
+  // Phone: digits only
+  phoneInput.addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    clearError('phone');
+  });
+  nameInput.addEventListener('input', function () { clearError('studentName'); });
+  classSelect.addEventListener('change', function () { clearError('studentClass'); });
+  examSelect.addEventListener('change', function () { clearError('targetExam'); });
+
+  function validate() {
+    clearAllErrors();
+    let ok = true;
+
+    const name = nameInput.value.trim();
+    if (name.length < 3) {
+      showError('studentName', 'Please enter the student\'s full name (min. 3 characters).');
+      ok = false;
+    }
+
+    if (!classSelect.value) {
+      showError('studentClass', 'Please select a class.');
+      ok = false;
+    }
+
+    if (!examSelect.value) {
+      showError('targetExam', 'Please select a target exam.');
+      ok = false;
+    }
+
+    const phone = phoneInput.value.trim();
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+      showError('phone', 'Please enter a valid 10-digit Indian mobile number.');
+      ok = false;
+    }
+
+    return ok;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!validate()) {
+      const firstErr = form.querySelector('.err:not(.hidden)');
+      if (firstErr) {
+        firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    const name = nameInput.value.trim();
+    const cls = classSelect.value;
+    const exam = examSelect.value;
+    const phone = phoneInput.value.trim();
+
+    const message =
+      '🎓 *NEW ADMISSION ENQUIRY — VERITAS EDUCATION*\n' +
+      '━━━━━━━━━━━━━━━━━━━━\n\n' +
+      '👤 *Student Name:* ' + name + '\n' +
+      '🏫 *Class:* ' + cls + '\n' +
+      '🎯 *Target Exam:* ' + exam + '\n' +
+      '📞 *Phone:* +91 ' + phone + '\n\n' +
+      '━━━━━━━━━━━━━━━━━━━━\n' +
+      'Please share batch timings, fee details and demo class availability. Thank you!';
+
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+
+    // Visual feedback
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"></span> Opening WhatsApp...';
+    submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+
+    window.setTimeout(function () {
+      const win = window.open(url, '_blank', 'noopener');
+      if (!win) window.location.href = url;
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
+      submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+      refreshIcons();
+
+      form.reset();
+    }, 450);
+  });
+
+  /* ---------------------------------------------------------
+     9. Hero particle network
+  --------------------------------------------------------- */
+  const canvas = document.getElementById('particles');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0, H = 0;
+  let particles = [];
+  let rafId = null;
+  let mouse = { x: -9999, y: -9999 };
+
+  const COLORS = ['59, 130, 246', '139, 92, 246', '6, 182, 212'];
+
+  function sizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    W = rect.width;
+    H = rect.height;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.floor(W * dpr);
+    canvas.height = Math.floor(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function buildParticles() {
+    const count = Math.max(28, Math.min(85, Math.floor(W / 16)));
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.32,
+        vy: (Math.random() - 0.5) * 0.32,
+        r: Math.random() * 1.7 + 0.7,
+        c: COLORS[Math.floor(Math.random() * COLORS.length)]
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    const linkDist = W < 640 ? 95 : 130;
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // wrap
+      if (p.x < -20) p.x = W + 20;
+      if (p.x > W + 20) p.x = -20;
+      if (p.y < -20) p.y = H + 20;
+      if (p.y > H + 20) p.y = -20;
+
+      // gentle mouse repulsion
+      const mdx = p.x - mouse.x;
+      const mdy = p.y - mouse.y;
+      const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (mDist < 120 && mDist > 0.001) {
+        const force = (120 - mDist) / 120 * 0.9;
+        p.x += (mdx / mDist) * force;
+        p.y += (mdy / mDist) * force;
+      }
+
+      // dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.c + ', 0.72)';
+      ctx.fill();
+
+      // glow
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * 3.6, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.c + ', 0.055)';
+      ctx.fill();
+
+      // links
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x;
+        const dy = p.y - q.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < linkDist * linkDist) {
+          const alpha = (1 - Math.sqrt(d2) / linkDist) * 0.30;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = 'rgba(99, 145, 245, ' + alpha + ')';
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+        }
+      }
+    }
+
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function startCanvas() {
+    sizeCanvas();
+    buildParticles();
+    if (rafId) cancelAnimationFrame(rafId);
+    if (!prefersReduced) {
+      draw();
+    } else {
+      // static single frame
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(function (p) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + p.c + ', 0.6)';
+        ctx.fill();
+      });
+    }
+  }
+
+  startCanvas();
+
+  let resizeTimer = null;
+  window.addEventListener('resize', function () {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(startCanvas, 200);
+  });
+
+  // Mouse / touch tracking on hero
+  const heroSection = document.getElementById('home');
+  heroSection.addEventListener('mousemove', function (e) {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  heroSection.addEventListener('mouseleave', function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  // Pause animation when hero is off-screen (perf)
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    const heroObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          if (!rafId) draw();
+        } else {
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+      });
+    }, { threshold: 0.02 });
+    heroObserver.observe(heroSection);
+  }
+
+  /* ---------------------------------------------------------
+     10. Book Demo Class -> scroll to form & focus
+  --------------------------------------------------------- */
+  function goToForm(e) {
+    const cta = e.currentTarget;
+    // Only intercept the navbar CTA to add focus behaviour
+    if (cta.id !== 'navCta') return;
+    window.setTimeout(function () {
+      if (nameInput) nameInput.focus({ preventScroll: true });
+    }, 700);
+  }
+  const navCta = document.getElementById('navCta');
+  if (navCta) navCta.addEventListener('click', goToForm);
+
+  /* ---------------------------------------------------------
+     11. Re-run lucide after all dynamic setup
+  --------------------------------------------------------- */
+  window.addEventListener('load', refreshIcons);
+  refreshIcons();
+})();
+</script>
+</body>
+          </html>
